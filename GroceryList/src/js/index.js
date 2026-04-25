@@ -6,7 +6,7 @@
     All classes and initialization code are in this single file.
 */
 
-// Edited by Zoie D 2/23/26
+// Edited by Zoie D 4/23/26
 
 import '../css/styles.css';
 import { GroceryModel } from './model.js';
