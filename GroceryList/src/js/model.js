@@ -6,7 +6,7 @@ export class GroceryModel {
   constructor() {
     try {
       const savedGroceries = JSON.parse(localStorage.getItem('groceries')); // array to hold groceries
-      // TODO: retrieves groceries from local storage into savedGroceries
+      // retrieves groceries from local storage into savedGroceries
       if (!Array.isArray(savedGroceries) || !this.allValid(savedGroceries)) {
         throw new Error('Invalid grocery payload');
       }
@@ -39,7 +39,6 @@ export class GroceryModel {
   }
 
   commit(groceries) {
-    // TODO: write this method
     this.groceries = groceries;
     localStorage.setItem('groceries', JSON.stringify(groceries));
     this.onGroceryListChanged(groceries);
@@ -52,12 +51,9 @@ export class GroceryModel {
   addGrocery(itemName, quantity) {
     const newGrocery = { itemName: itemName, quantity: quantity };
     this.commit([...this.groceries, newGrocery]);
-    
-    // TODO: adds the new grocery to the array of groceries and put it in local storage
   }
 
   deleteGrocery(index) {
-    // TODO: Removes the grocery from the array and update local storage.
     this.commit(this.groceries.filter((_, groceryIndex) => groceryIndex !== index));
   }
 }
